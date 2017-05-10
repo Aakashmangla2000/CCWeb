@@ -1,0 +1,336 @@
+/* Set-up Strasua font and use it for nav-bar and home-page header */
+@font-face {
+  font-family: 'Strasua';
+      src: url('fonts/Strasua.ttf'); 
+    }
+
+.header-cc  {
+  font-family: 'Strasua';
+  color:white;
+      text-shadow: 2px 2px #a6a6a6;
+      text-align: left;
+}
+
+.left-nav {
+	font-family:'Strasua';
+}
+.parallax {
+    background-image: url(../images/3x3cube1.jpg);
+    height:100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+		h2 {
+		font-size: 30px;
+		color: white;
+		font-family: 'Strasua';
+	
+	}
+
+	h1{
+		font-family: 'Strasua';
+		font-size: 70px;
+		text-align: left;
+		color:black;
+}
+	
+	h3 {
+	font-family: 'Strasua';
+		font-size: 70px;
+		color:black;
+    		text-align: center;
+        font-weight: bold;
+
+	}
+	
+  h4 {
+    font size: 15px;
+    color: black;
+  	font-family: "Arial", cursive, sans-serif;
+        text-align: center;
+    text-decoration: underline;
+        font-weight: bold;
+
+  }
+
+  h5 {
+    font size: 15px;
+    color: white;
+  	font-family: "Arial", cursive, sans-serif;
+        text-align: center;
+  }
+
+
+  h6 {
+    font size: 15px;
+    color: grey;
+  	font-family: "Arial", cursive, sans-serif;
+        text-align: center;
+  }
+
+  p3 {
+     font size: 1px;
+    color: black;
+  	font-family: "Arial", cursive, sans-serif;
+      text-align: justify;
+            text-justify: inter-word;
+  }
+
+  p1{
+
+    font-size: 20px;
+		color: white;
+		font-family: "Lucida Console", Monaco, monospace;
+    		text-align: center;
+  }
+
+    p{
+
+    font-size: 20px;
+		color: black;
+		font-family: "Lucida Console", Monaco, monospace;
+    		text-align: center;
+        
+  }
+	
+
+
+/* Set-up tinted background for pages */
+
+.mybg-logo{
+height:100vh;
+background:linear-gradient(
+      rgba(75, 0, 235, 0.81), 
+      rgba(75, 0, 235, 0.81)
+    ),url(../images/slider/complexity2016_group.jpg);
+}
+
+.mybg-home{
+
+   background-image:url(../images/ao.gif);
+
+    height:100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	
+}
+
+.mybg-competitions{
+height:100%;
+  background-image:url(../images/ao.gif);
+	    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mybg-about{
+height:100%;
+  background-image:url(../images/ao.gif);
+	    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	
+}
+
+.mybg-blog{
+height:100%;
+  background-image:url(../images/white-noise.jpg);
+
+	    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.mybg-compguide{
+height:100%;
+	  background-image:url(../images/ao.gif);
+
+	    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+
+
+.left-nav{
+  line-height:1.5em;
+}
+.intro{
+  background-color:black;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+/* Set up colors of tiles */
+.nav-color1{
+  background-color:#3700a5; 
+}
+
+.nav-color2{
+  background-color:#da0000;
+}
+
+.nav-color3{
+  background-color:#db5700;
+}
+
+.nav-color4{
+  background-color:#e0c300;
+}
+
+.nav-color5{
+  background-color:#00c400;
+}
+
+.nav-color6{
+  background-color:#005ed5;
+}
+
+
+/* Set up colors of tiles for Modi*/
+.nav-color1{
+  background-color:#4B00EB; 
+}
+
+.nav-color2{
+  background-color:#FF0000;
+}
+
+.nav-color3{
+  background-color:#FF6A00;
+}
+
+.nav-color4{
+  background-color:#FFE400;
+}
+
+.nav-color5{
+  background-color:#00E900;
+}
+
+.nav-color6{
+  background-color:#0080FF;
+}
+
+
+/* Over-write bootstrap to remove padding and margins */
+.navbar{
+  margin-bottom: 0px;
+  border: 0px solid transparent;
+}
+
+.nav-pills > li + li {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.nav-stacked > li + li {
+  margin-top: 0px;
+}
+
+
+.navbar-collapse {
+  padding-right: 0px;
+  padding-left: 0px;
+  overflow-x: hidden;
+  border-top: 0px solid transparent;
+  position: fixed;
+
+}
+
+/* Hover-color of tiles */
+.nav-color1:hover a:hover{
+ background-color:#3700A5;
+}
+
+.nav-color2:hover a:hover{
+ background-color:#DA0000;
+}
+
+.nav-color3:hover a:hover{
+ background-color:#DB5700;
+}
+
+.nav-color4:hover a:hover{
+ background-color:#E0C300;
+}
+
+.nav-color5:hover a:hover{
+ background-color:#00C400;
+}
+
+.nav-color6:hover a:hover{
+ background-color:#005ED5;
+}
+
+/*Remove horizontal bootstrap grid padding */
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  padding-left: 0px;
+  padding-right:0px;
+}
+
+.col-lg-10, .col-md-9, .col-sm-8{
+overflow-x:hidden;
+}
+
+
+div.comp-box {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+
+
+.leftside
+ {
+    float: left;
+    max-width: 350px;
+    margin: 0;
+    padding: 1em;
+    list-style-type: none;
+    padding: 0;
+    text-decoration: none;
+}
+
+article {
+    margin-left: 10px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0s ease;
+}
+
+
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}

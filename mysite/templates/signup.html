@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h3>Sign up</h3>
+  <form method="post">
+    <br>{% csrf_token %}<br>
+    {% for field in form %} <br>
+      <p> 
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.help_text %}
+          <h6>{{ field.help_text }}</h6>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}<br><br><br>
+    <div class="wrapper">
+    <button type="submit">Sign up</button><button type="submit"><a href="/login/">Login</button>
+    </div>
+  </form>
+{% endblock %}

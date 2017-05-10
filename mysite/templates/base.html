@@ -1,0 +1,52 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+   <!-- Import jquery and bootstrap -->
+   <head>
+    <meta charset="utf-8">
+    <title>
+     {% block title %}{% endblock %}
+    </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{% static 'js/main.js' %}"></script> 
+    <script src="{% static 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js' %}"></script> 
+    <script src="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' %}"></script> 
+    <script src="{% static 'js/slideshow.js' %}"></script> 
+    <script src="{% static 'js/countdown.js' %}"></script> 
+  <script src="{% static 'js/counter.js' %}"></script>
+               <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}">
+                <link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap.css' %}" type="text/css"></link>
+                <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"></link>
+                <link rel="stylesheet" href="{% static 'css/responsive.css' %}" type="text/css"></link>
+                <link rel="stylesheet" href="{% static 'css/counter.css' %}" type="text/css"> </link>
+                <link rel="stylesheet" href="{% static 'css/home.css' %}" type="text/css" />
+                <link rel="stylesheet" href="{% static 'css/info.css' %}" type="text/css" />
+                <link rel="stylesheet" href="{% static 'css/members.css' %}" type="text/css" />
+                <link rel="stylesheet" href="{% static 'css/pure-min.css' %}" type="text/css" />
+                <link rel="stylesheet" href="{% static 'css/competitions.css' %}" type="text/css" />
+                <link rel="stylesheet" href="{% static 'c//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css' %}" type="text/css" />
+                <link rel="stylesheet" href="{% static 'https://www.w3schools.com/w3css/4/w3.css' %}"/>
+       <link rel="stylesheet" href="{% static '/css/comp-ribbon.css' %}" type="text/css"></link>
+			 <link rel="stylesheet" href="{% static '/css/comps-responsive.css' %}" type="text/css"></link>
+
+	<style type="text/css">
+	#mc_embed_signup{background:black; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+	</style>
+    
+   </head>
+   <body>      {% block content %}
+         <div class="parallax"></div>
+  {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">logout</a>
+      {% else %}
+        <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
+      {% endif %}
+      <hr>
+      {% endblock %}
+
+   </body>
+</html>
+

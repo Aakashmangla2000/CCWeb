@@ -1,0 +1,184 @@
+<!-- djangotemplates/example/templates/about.html -->
+
+{% extends 'base.html' %}
+  {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<!--test->
+<!-- Import jquery and bootstrap -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+               <link rel="stylesheet" href="{% static 'css/pure-min.css' %}" type="text/css" />
+                 <link rel="stylesheet" href="{% static 'css/info.css' %}" type="text/css" />
+                                  <link rel="stylesheet" href="css/info.css' %}" type="text/css" />
+
+	<title> {% block title %}About Us {% endblock %} </title>
+</head>
+
+<style>
+	/*body {
+		    background-image: url(../images/ao.gif);
+	}*/
+	.error {color: #FF0000;}
+</style>
+
+
+
+<body>
+    {% block content %}
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+  <div class="row">
+    <div class="nopad col-md-3 col-lg-2 col-sm-4">
+     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>  
+ <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	<ul class="nav nav-pills nav-stacked">
+	  <li class="left-nav nav-color1"><a class="left-nav" href="../"><span class="kek2"><img src="../static/images/logos/ccwhite.png""></span></a></li>
+	  <li class="left-nav nav-color2"><a class="left-nav" href="../"><span class="kek">Home</span></a></li>
+	  <li class="left-nav nav-color3"><a class="left-nav" href="#"><span class="kek">About</span></a></li>
+	  <li class="left-nav nav-color6"><a class="left-nav" href="../members"><span class="kek">Members</span></a></li>
+	  <li class="left-nav nav-color4"><a class="left-nav" href="../competitions"><span class="kek">Competitions</span></a></li>
+	  <li class="left-nav nav-color5"><a class="left-nav" href="../blog"><span class="kek">Sponsors</span></a></li>
+	  <li class="left-nav nav-color6"><a class="left-nav" href="../compguide"><span class="kek">Competitor Guide</span></a></li>
+	</ul>
+	</div>
+	</div>
+    <div class="col-lg-10 col-md-9 col-sm-8 mybg-about" style="padding-left: 10px">
+<!-- Spam just for testing -->
+		  		  <br><br>
+
+	<h1 class="header-cc">    About CC </h1>
+		  <br><br>
+	<p1> At Capital Cubing we aim at better competitions and better interaction of our cubing community through cube meets. 
+		This is for everybody who wanted to organise a competition but could not because of guidance problems or lack of an organising team. 
+		  This is for everyone who could see mistakes in competitions and wanted to fix them. We provide you that platform and resources that you need.  
+		  <br> <br> 
+		  If you've been solving that Rubik's Cube for a while, and would like to compete, take a look at the upcoming competitions. 
+		  If you register for an account, you can find other speedcubers in your area.
+		  If you're new to competing, see our Competitor Tutorial so you know what's in store for you when you go to a competition.
+		  
+		  </p1>
+	<br> <br> <br>
+		  
+		  
+<?php
+		  
+// define variables and set to empty values
+		  
+$nameErr = $emailErr = $genderErr = $websiteErr = "";
+$name = $email = $gender = $comment = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+      $nameErr = "Only letters and white space allowed"; 
+    }
+  }
+  
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format"; 
+    }
+  }
+    
+  if (empty($_POST["website"])) {
+    $website = "";
+  } else {
+    $website = test_input($_POST["website"]);
+    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
+    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+      $websiteErr = "Invalid URL"; 
+    }
+  }
+
+  if (empty($_POST["comment"])) {
+    $comment = "";
+  } else {
+    $comment = test_input($_POST["comment"]);
+  }
+
+  if (empty($_POST["gender"])) {
+    $genderErr = "Gender is required";
+  } else {
+    $gender = test_input($_POST["gender"]);
+  }
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+	<br><br><br>  
+<h1 class="header-cc" style="text-align: center;"> CONTACT US </h1>
+<!--<p><span class="error">* required field.</span></p>-->
+<br><br>    
+
+<div align="center" >
+  <form class="pure-form">
+        <fieldset class="pure-group">
+            <input type="text" class="pure-input-1-2" placeholder="Name"><br>
+            <input type="email" class="pure-input-1-2" placeholder="Email" required><br>
+            <input type="text" class="pure-input-1-2" placeholder="Phone Number"><br>
+            <textarea class="pure-input-1-2" placeholder="Comments" required></textarea>
+        </fieldset>
+        <button type="submit" class="pure-button pure-input-1-2 pure-button-primary">Submit</button>
+    </form>
+  </div>
+    <!--<p> Name:  <input type="text" name="name" value=""> 
+    <span class="error">* <?php echo $nameErr;?></span></p>
+    <br><br>
+   <p>E-mail: <input type="text" name="email" value=""> 
+    <span class="error">* <?php echo $emailErr;?></span></p>
+    <br><br>
+  		  <p> Website: <input type="text" name="website" value=""> 
+    <span class="error"><?php echo $websiteErr;?></span></p> 
+    <br><br>
+  		  <p> Comment: </p> <textarea name="comment" rows="5" cols="40"> </textarea> 
+    <br><br>
+  		  <p> Gender: 
+    <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> Female
+    <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?>  Male
+    <span class="error">* <?php echo $genderErr;?></span>
+  		  </p>
+    <br><br>
+    <input type="submit" name="submit" value="Submit">  
+
+    -->		  
+
+
+	<br><br><br>	  
+		
+		 
+    </div>
+  </div>
+</div>
+</nav>
+<script>
+$(document).ready(function(){
+    $('.nav').affix({offset: {top: 0} }); 
+});
+</script>
+</body>
+</html>
+
+  {% endblock %}
